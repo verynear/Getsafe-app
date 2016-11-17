@@ -1,7 +1,7 @@
 (function() {
   "use strict"; 
 
-    angular.module("app").controller("alertsdemoCtrl", function($scope, $http) {
+    angular.module("app").controller("alertsdemoCtrl", function($scope, $http, $location, $anchorScroll) {
 
     window.onload = function getLocation() {
             navigator.geolocation.getCurrentPosition(showPosition);
@@ -26,7 +26,7 @@
           $scope.alert1 = $scope.alerts[0];
           $scope.alertLat = $scope.alert1.latitude;
           $scope.alertLon = $scope.alert1.longitude;
-          y.innerHTML = $scope.alertLat + "N" + $scope.alertLon + "W";
+          y.innerHTML = $scope.alertLat + " N " + $scope.alertLon + " W";
       $scope.getDistance();
       $scope.testRange($scope.fetchShelters);
       });
@@ -44,29 +44,43 @@
     var r = document.getElementById("range");
 
     $scope.testRange = function(callback) {
-      if ($scope.distancemiles < 20) {
+      if ($scope.distancemiles < 30) {
         $scope.range = true;
         r.innerHTML = "Local Alert";
       } else {
         $scope.range = false;
-        r.innerHTML = "Alert not in range -" + $scope.distancemiles + "away";
+        r.innerHTML = "Alert not in range -" + Math.trunc($scope.distancemiles) + "away";
       }
       if ($scope.range) {
         callback();
-        $scope.alert();  
+        $scope.alert();
+        $scope.jdelay();  
       }
     };
 
     var v = document.getElementById("pending");
 
+    $scope.flash = function() {
+        v.innerHTML = "Finding Closest Shelter";
+        v.style.display = (v.style.display == 'none' ? '' : 'none');
+        var text = document.getElementById("range");
+        text.style.color = (text.style.color=='red') ? 'black':'red';
+    };
+    
+    var t = document.getElementById("output");
+
     $scope.alert = function() {
-      setTimeout($scope.flash(), 1000);
+      setInterval($scope.flash, 1000);
     };
 
-    $scope.flash = function() {
-      v.innerHTML = "Finding Closest Shelter";
-      document.getElementById("range").style.color="red";
-    }; 
+    $scope.jdelay = function() {
+      setTimeout($scope.jump, 10500);
+    };
+
+    $scope.jump = function() {
+      $location.hash('anc');
+      $anchorScroll();
+    };
 
     $scope.fetchShelters = function(callback) {
       $http.get("/api/shelters.json").then(function(response) {
@@ -161,7 +175,7 @@
 
             outputDiv.innerHTML = 'Closest Shelter is located at ' + $scope.closestshelter +
                           ' -- which is ' + $scope.closestdis + ' away. Estimated driving time is ' +
-                          $scope.closesttime + '<br> Click here for directions:' ;
+                          $scope.closesttime;
 
           };
 

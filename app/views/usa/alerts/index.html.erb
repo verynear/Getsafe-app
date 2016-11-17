@@ -1,26 +1,25 @@
 <div ng-app="app">
 <div ng-controller="alertsdemoCtrl" ng-init="showPosition()">
 <!-- Testimonials Section Starts -->
-	<section class="section-area testimonials-section">
+	<section class="section-area testimonials-section  parallax">
 	<!-- Nested Container Starts -->
 		<div class="container">				
 		<!-- Nested Row Starts -->
 			<div class="row">
-			  {{ 1 + 1 }}
 			<!-- Col #1 Starts -->
 				<div class="col-md-6 col-xs-12">
 				<!-- Testimonial Box Starts -->
 				  <button ng-click="fetchAlert()">Alert Demo</button>
 					<div class="testimonial-box text-light-color">
 						<div class="title-bar clearfix text-uppercase">
+							<p class="title text-bold brd">Alert Dashboard</p>
 							<%= image_tag "usflag.png", class: "img-responsive pull-left" %>
-							<p class="title text-bold">Alert Dashboard</p>
 							<p class="title-sub text-light">Current Alerts</p>
 						</div>
-						<p class="lead text-center text-normal">
-							<em>Current Location:</em><em id="userpos"></em>
+						<p class="lead text-center text-normal dash">
+							<em>Current Location: </em><em id="userpos"></em>
 							<br>
-							<em>Alert Location:(Demo)</em><em id="alertpos"></em>
+							<em>Alert Location: (Demo) </em><em id="alertpos"></em>
 						</p>
 					</div>
 				<!-- Testimonial Box Ends -->
@@ -28,40 +27,50 @@
 			<!-- Col #1 Ends -->
 			<!-- Col #2 Starts -->
 				<div class="col-md-6 col-xs-12 text-center-sm text-center-xs">
+					<h4 class="text-medium around-logo-sm">Send Check-In SMS</h4>
 					<%= form_tag "/send_sms", method: :post do %>
 					  <p><%= text_field_tag :to, "Contact No." %></p>
 					  <p><%= text_field_tag :body, "Im OK!" %>
 					  <%= submit_tag 'Send SMS', class:"btn btn-info" %></p>
 					<% end %>
+					<br>
 					<h1 id="range" class="text-uppercase text-bold no-margin-bottom"></h1>
 					<h3 id="pending" class="text-uppercase text-spl-color no-margin-top"></h3>
 				</div>
 			<!-- Col #2 Ends -->
-				</div>
+			</div>
 		<!-- Nested Row Ends -->
 		</div>
 	<!-- Nested Container Ends -->
 	</section>
 <!-- Testimonials Section Ends -->
 
-<section id="intro" class="intro-section parallax">
+<section id="intro" class="intro-section">
 <!-- Nested Container Starts -->
 	<div class="container">
 	<!-- Nested Row Starts -->
 		<div class="row">
 		<!-- Intro Content Starts -->
 		  	
-		  {{ 1 + 1 }}
 				<div class="col-md-6 col-xs-12">
 					<div class="intro-content text-center-sm text-center-xs">
-								<strong>Closest Shelter</strong>
+								<a class="anchor" id="anc"></a>
+								<h4 class="text-medium around-logo-sm">Closest Shelter</h4>
 						      	<p id="output"></p>
 						          <div id="map1"></div>
+						          <br>
+						          <h4 class="text-medium around-logo-sm">Send Check-In SMS</h4>
+						          <%= form_tag "/send_sms", method: :post do %>
+						            <p><%= text_field_tag :to, "Contact No." %></p>
+						            <p><%= text_field_tag :body, "Im OK!" %>
+						            <%= submit_tag 'Send SMS', class:"btn btn-info" %></p>
+						          <% end %>
 					</div>	
 				</div>
 
 				<div class="col-md-6 col-xs-12">
-				{{ 1 + 1 }}
+						<br>
+						<h4 class="text-medium around-logo-sm">Click Here For Directions</h4>
 						<button ng-click="initMap1()">Get Directions</button>
 						<div id="directions"></div>
 						<div id="map2"></div>
@@ -75,5 +84,5 @@
 	</div>
 <!-- Nested Container Ends -->
 </section>
-	 </div>
-  	</div>
+</div>
+</div>

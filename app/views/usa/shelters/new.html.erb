@@ -1,6 +1,6 @@
 <h1>Enter A New Shelter Listing</h1>
 
-<%= form_tag '/shelters', method: :post do %>
+<%= form_tag '/usa/shelters', method: :post do %>
 	<div>
   	  <%= label_tag :region %>
 	  <%= select_tag("region", options_for_select(["USA","Israel","Other"], ":region")) %>

@@ -8,11 +8,11 @@
 <h3>Active: <%= @shelter.active %></h3>
 
 
-<%= link_to 'Alert Dashboard', "/", class: "btn btn-danger" %>
-<%= link_to 'Shelter List', "/shelters", class: "btn btn-success" %>
+<%= link_to 'Alert Dashboard', "/usa", class: "btn btn-danger" %>
+<%= link_to 'Shelter List', "/usa/shelters", class: "btn btn-success" %>
 <br>
 <br>
 <% if current_user %>
-	<%= link_to 'Edit', "/shelters/#{@shelter.id}/edit", class: "btn btn-info" %>
-	<%= link_to 'Delete', "/shelters/#{@shelter.id}", method: :delete, class: "btn btn-danger" %>
+	<%= link_to 'Edit', "/usa/shelters/#{@shelter.id}/edit", class: "btn btn-info" %>
+	<%= link_to 'Delete', "/usa/shelters/#{@shelter.id}", method: :delete, class: "btn btn-danger" %>
 <% end %>

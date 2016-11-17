@@ -58,7 +58,7 @@ class Usa::SheltersController < ApplicationController
 		
 
 		flash[:success] = "Shelter Listing Updated"
-		redirect_to "/shelters/#{@shelter.id}"
+		redirect_to "/usa/shelters/#{@shelter.id}"
 	end
 
 	def destroy

@@ -1,6 +1,6 @@
 <h1>Edit a Shelter Listing</h1>
 
-<%= form_tag "/shelters/#{ @shelter.id }", method: :patch do %>
+<%= form_tag "/usa/shelters/#{ @shelter.id }", method: :patch do %>
 	<div>
 	  <%= label_tag :name %>
 	  <%= text_field_tag :name, @shelter.name %>

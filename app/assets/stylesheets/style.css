@@ -202,7 +202,8 @@ h6 { font-size: 16px; }
 
 .intro-section {
 	padding-top: 30px;
-	background-image: url('safe.png');
+	color: #000;
+	background-color: #f7f7f7;
 }	
 	.intro-content {
 		padding-top: 30px;
@@ -295,15 +296,17 @@ h6 { font-size: 16px; }
 /* Testimonials Section Styles Starts */
 
 .testimonials-section {	
+	background-image: url('safe.png');
 }
 	.testimonials-section h3 {
-		margin-top: 190px;
+		margin-top: 50px;
 	}
 	.testimonial-box {
 		padding: 60px;
 		position: relative;
 		float: left;
-		background-color: #3497db;
+		background-color: #262626;
+		border-radius: 12px;
 	}
 		.testimonial-box .title-bar {
 			padding: 20px 40px;
@@ -311,7 +314,7 @@ h6 { font-size: 16px; }
 			top: 45px;
 			right: -110px;
 			width: 75%;
-			background-color: #262626;
+			background-color: #3497db;
 		}
 			.testimonial-box .title-bar img {
 				margin-right: 40px;
@@ -320,10 +323,10 @@ h6 { font-size: 16px; }
 				margin-top: 5px;
 			}
 			.testimonial-box .title-bar .title-sub {
-				font-size: 14px;
+				font-size: 20px;
 			}
 			.testimonial-box .title-bar p {
-				margin-bottom: 0;
+				margin-bottom: 5px;
 			}
 		.testimonial-box p.lead {
 			margin-top: 120px;
@@ -620,7 +623,11 @@ h6 { font-size: 16px; }
 }
 
 .around-logo-sm {
-	font-size: 18px;
+	font-size: 20px;
+}
+
+.dash {
+	color: #ffffff;
 }
 
 #right-panel {
@@ -651,6 +658,9 @@ h6 { font-size: 16px; }
   font-size: 14px;
 }
 
+.brd {
+	font-size: 24px;
+}
 
 #left-panel {
   font-family: 'Roboto','sans-serif';
@@ -707,4 +717,11 @@ h6 { font-size: 16px; }
   font-family: 'Roboto','sans-serif';
   line-height: 30px;
   padding-left: 10px;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -150px;
+    visibility: hidden;
 }

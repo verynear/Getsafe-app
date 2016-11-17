@@ -34,7 +34,7 @@ class Isr::SheltersController < ApplicationController
 					)
 
 		flash[:success] = "Shelter Listing Created"
-		redirect_to "/shelters/#{@shelter.id}"
+		redirect_to "/isr/shelters/#{@shelter.id}"
 	end
 
 	def show
