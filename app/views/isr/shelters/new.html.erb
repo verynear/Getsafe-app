@@ -1,0 +1,36 @@
+<h1>Enter A New Shelter Listing</h1>
+
+<%= form_tag '/shelters', method: :post do %>
+	<div>
+  	  <%= label_tag :region %>
+	  <%= select_tag("region", options_for_select(["USA","Israel","Other"], ":region")) %>
+	</div>
+	<div>
+	  <%= label_tag :name %>
+	  <%= text_field_tag :name %>
+	</div>
+	<div>
+	  <%= label_tag :address %>
+	  <%= text_field_tag :address %>
+	</div>
+	<div>
+	  <%= label_tag :city %>
+	  <%= text_field_tag :city %>
+	</div>
+	<div>
+	  <%= label_tag :state %>
+	  <%= text_field_tag :state %>
+	</div>
+	<div>
+	  <%= label_tag :zip %>
+	  <%= text_field_tag :zip %>
+	</div>
+	<div>
+	<%= label_tag :active %>
+	<%= select_tag("active", options_for_select([true, false], :active)) %>
+	</div>
+	<br>
+	<div>
+	  <%= submit_tag 'Create' %>
+	</div>
+<% end %>

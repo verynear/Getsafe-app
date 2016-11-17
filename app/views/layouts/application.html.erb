@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>Get Safe App</title>
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+</head>
+  <body>
+  <header id="main-header" class="main-header">
+  <!-- Nested Container Starts -->
+  	<div class="container text-center-xs">
+  	<!-- Nested Row Starts -->
+  		<div class="row">
+  		<!-- Toll Free Starts -->
+  			<div class="col-sm-4 col-xs-12 text-right-lg text-right-md text-right-sm hidden-xs">
+  				<span class="text-spl-color text-medium around-logo">Keeping You Safe</span><br>
+  				<span class="text-light around-logo-sm">Location Based Threat Alerts</span>
+  			</div>
+  		<!-- Toll Free Ends -->
+  		<!-- Logo Starts -->
+  			<div class="col-sm-4 col-xs-12">
+  				<%= image_tag "logo.png", class: "img-responsive logo img-center" %>
+  			</div>
+  		<!-- Logo Ends -->
+  		<!-- Working Hours Starts -->
+  			<div class="col-sm-4 col-xs-12 hidden-xs">
+  				<span class="text-spl-color text-medium around-logo">Stay in Communication</span><br>
+  				<span class="text-light around-logo-sm">Check-In with Family and Friends</span>
+  			</div>
+  		<!-- Working Hours Ends -->
+  		</div>
+  	<!-- Nested Row Ends -->
+  	</div>
+  <!-- Nested Container Ends -->
+  </header>
+  <!-- Header Ends -->
+  <!-- Navbar Starts -->
+  	<nav id="nav" class="navbar navbar-default sticky-nav flat animation" role="navigation">
+  	<!-- Container Starts -->
+  		<div class="container text-center">
+  		<!-- Navbar Header Starts -->
+  			<div class="navbar-header">
+  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+  					<span class="sr-only">Toggle navigation</span>
+  					<span class="icon-bar animation"></span>
+  					<span class="icon-bar animation"></span>
+  					<span class="icon-bar animation"></span>
+  				</button>
+  			</div>
+  		<!-- Navbar Header Ends -->
+  		<!-- Navbar Collapse Starts -->
+  			<div class="navbar-collapse collapse">
+  				<ul class="nav navbar-nav text-uppercase">
+  					<li class="current"><a href="#main-header">Home</a></li>
+  					<li><a href="#intro">Alerts</a></li>
+  					<li><a href="#why-us">Shelters</a></li>
+  					<li><a href="#services">Contacts</a></li>
+  					<li><a href="#features">News</a></li>
+  					<li><a href="#testimonials">Profile</a></li>
+  				</ul>
+  			</div>
+  		<!-- Navbar Collapse Ends -->
+  		</div>
+  	<!-- Container Ends -->
+  	</nav>
+  <!-- Navbar Ends -->
+    <%= yield %>
+    <!-- Why Us Section Starts -->
+    	<section id="why-us" class="section-area blue why-us-section text-center text-lite-color">
+    	<!-- Nested Container Starts -->
+    		<div class="container">
+    			<h3>Other Options</h3>
+    			<p class="text-light">Additional Safety Information</p>
+    			<ul class="list-unstyled row">
+    				<li class="col-md-3 col-sm-6 col-xs-12">
+    					<i class="fa fa-home circle animation"></i>
+    					<h4>Shelters</h4>
+    					<p>
+    						There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
+    					</p>
+    				</li>
+    				<li class="col-md-3 col-sm-6 col-xs-12">
+    					<i class="fa fa-exclamation-triangle circle animation"></i>
+    					<h4>Recent Alerts</h4>
+    					<p>
+    						There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
+    					</p>
+    				</li>
+    				<li class="col-md-3 col-sm-6 col-xs-12">
+    					<i class="fa fa-twitter circle animation"></i>
+    					<h4>News</h4>
+    					<p>
+    						There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
+    					</p>
+    				</li>
+    				<li class="col-md-3 col-sm-6 col-xs-12">
+    					<i class="fa fa-users circle animation"></i>
+    					<h4>Add/Remove Contacts</h4>
+    					<p>
+    						There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
+    					</p>
+    				</li>
+    			</ul>
+    		</div>
+    	<!-- Nested Container Ends -->
+    	</section>
+    <!-- Why Us Section Ends -->
+    <!-- Map Starts -->
+    	<div class="map"></div>
+    <!-- Map Ends -->
+    <script src='https://maps.googleapis.com/maps/api/js?key=<%= ENV["google_api_key"] %>&libraries=geometry'></script>
+  </body>
+</html>

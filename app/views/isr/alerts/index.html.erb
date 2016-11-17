@@ -1,0 +1,36 @@
+<section id="intro" class="intro-section parallax">
+<!-- Nested Container Starts -->
+	<div class="container">
+	<!-- Nested Row Starts -->
+		<div class="row">
+		<!-- Intro Content Starts -->
+			<div class="col-md-7 col-xs-12">
+				<div class="intro-content text-center-sm text-center-xs">
+					<h2 class="text-spl-color text-normal">Alert Dashboard</h2>
+					<h4 class="text-dark-color text-normal">Current Alerts</h4>
+					<div ng-app="app">
+					  {{ 1 + 1 }}
+					  <div ng-controller="alertsisrCtrl" ng-init="showPosition()">
+						  <h2 id="userpos">A Paragraph</h2>
+						  <button ng-click="poll()">Click me!</button>
+					  </div>
+					</div>
+					<h5>Alert Start: <%= @alert[:alert_start] %></h5>
+					<h5>Alert End: <%= @alert[:alert_end] %></h5>
+					<br>
+					<h5>Alert Type: <%= @alert[:alert_type] %></h5>
+					<h5>Alert Zone: <%= @alert[:alert_zone] %></h5>
+					<p><br></p>
+				</div>
+			</div>
+		<!-- Intro Content Ends -->
+		<!-- Intro Image Starts -->
+			<div class="col-md-5 col-xs-12">
+				<%= image_tag "israelflag.png", class: "img-responsive img-center-sm img-center-xs" %>
+			</div>
+		<!-- Intro Image Ends -->
+		</div>
+	<!-- Nested Row Ends -->
+	</div>
+<!-- Nested Container Ends -->
+</section>

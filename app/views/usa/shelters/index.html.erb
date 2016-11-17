@@ -1,0 +1,14 @@
+<h1 align="center">Regional Shelters</h1>
+<br>
+
+<% @shelters.each do |shelter| %>
+	<h1><%= link_to shelter.name, "/shelters/#{shelter.id}" %></h1>
+	<h3>Address: <%= shelter.address %></h3>
+	<h2>City: <%= shelter.city %></h2>
+	<h3><%= shelter.state %>, <%= shelter.zip %></h3>
+	<br>
+<% end %>
+<br>
+<br>
+<%= link_to 'Add Shelter', "/shelters/new", class: "btn btn-info" %>
+<%= link_to 'Alert Dashboard', "/", class: "btn btn-danger" %>

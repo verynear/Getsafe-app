@@ -1,0 +1,7 @@
+<h1>Recent Alerts</h1>
+
+<%= @alerts.take(3).each |alert| %>
+	<h1><%= alert[:created_at].strftime("%e %b %Y, %S:%M") %></h1>
+	<h3><%= alert[:alert_type] %></h3>
+	<h2>Location: <%= alert[:alert_zone] %></h2>
+<% end %>

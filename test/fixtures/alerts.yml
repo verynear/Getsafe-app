@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: MyString
+  type_of_alert: MyString
+  user_id: MyString
+
+two:
+  time: MyString
+  type_of_alert: MyString
+  user_id: MyString

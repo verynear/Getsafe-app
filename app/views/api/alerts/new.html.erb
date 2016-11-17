@@ -1,0 +1,24 @@
+<h1>Enter A New Sample Alert</h1>
+
+<%= form_tag '/api/alerts', method: :post do %>
+	<div>
+	  <%= label_tag :time %>
+	  <%= text_field_tag :time %>
+	</div>
+	<div>
+	  <%= label_tag :type_of_alert %>
+	  <%= text_field_tag :type_of_alert %>
+	</div>
+	<div>
+	  <%= label_tag :latitude %>
+	  <%= text_field_tag :latitude %>
+	</div>
+	<div>
+	  <%= label_tag :longitude %>
+	  <%= text_field_tag :longitude %>
+	</div>
+	<br>
+	<div>
+	  <%= submit_tag 'Create' %>
+	</div>
+<% end %>

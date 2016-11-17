@@ -1,0 +1,18 @@
+<h1><%= @shelter.name %></h1>
+
+<h2><%= @shelter.region %>
+
+<h3>Address: <%= @shelter.address %></h3>
+<h2>City: <%= @shelter.city %></h2>
+<h3><%= @shelter.state %>, <%= @shelter.zip %></h3>
+<h3>Active: <%= @shelter.active %></h3>
+
+
+<%= link_to 'Alert Dashboard', "/", class: "btn btn-danger" %>
+<%= link_to 'Shelter List', "/shelters", class: "btn btn-success" %>
+<br>
+<br>
+<% if current_user %>
+	<%= link_to 'Edit', "/shelters/#{@shelter.id}/edit", class: "btn btn-info" %>
+	<%= link_to 'Delete', "/shelters/#{@shelter.id}", method: :delete, class: "btn btn-danger" %>
+<% end %>
